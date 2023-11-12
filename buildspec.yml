@@ -8,9 +8,14 @@ phases:
 
   build:
     commands:
-      - echo "Creating deployment package..."
+      - echo "Zipping deployment package..."
       - cd lib
       - zip -r9 ../deployment_package.zip .
       - cd ..
       - zip -g deployment_package.zip lambda_function.py
-      - echo "Build stage complete. Deployment package ready."
+
+  post_build:
+    commands:
+      - echo "Updating lambda Function..."
+      - aws lambda update-function-code --function-name github-to-lambda-demo --zip-file fileb://deployment_package.zip
+      - echo "DONE!!"
