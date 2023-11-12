@@ -1,5 +1,5 @@
 import json
-# import inflection
+import inflection
 import boto3
 import botocore
 from opensearchpy import OpenSearch, RequestsHttpConnection
@@ -39,14 +39,14 @@ def lambda_handler(event, context):
 
         
         labels = [label['Name'] for label in rekognition_response['Labels']]
-        # cusomLabels = response["Metadata"]["customlabels"]
+        cusomLabels = response["Metadata"]["customlabels"]
         
-        # for label in labels:
-        #     label = inflection.singularize(label)
-        # if customlabels != "":
-        #     customlabels = customlabels.split(",")
-        #     for l in customlabels:
-        #         labels.append(inflection.singularize(l))
+        for label in labels:
+            label = inflection.singularize(label)
+        if customlabels != "":
+            customlabels = customlabels.split(",")
+            for l in customlabels:
+                labels.append(inflection.singularize(l))
         
         print(labels)
         print(response)
