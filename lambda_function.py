@@ -73,6 +73,16 @@ def lambda_handler(event, context):
     # s3 = boto3.client('s3')
     # response = s3.head_object(Bucket='photoalbumsb2', Key='1.png')
     # print(response)
+    return {
+        'statusCode': 200,
+        'body': '',
+        "headers": {
+                "Content-Type": 'application/json',
+                "Access-Control-Allow-Headers": '*',
+                "Access-Control-Allow-Origin": '*',
+                "Access-Control-Allow-Methods": '*',
+        }
+    }
 
 
 
