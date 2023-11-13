@@ -11,7 +11,6 @@ rekognition = boto3.client('rekognition')
 es_client = boto3.client('opensearch')
 # HOST = 'search-photos-dhul7pceqzrodplgllu4qk25jy.us-east-1.es.amazonaws.com/'
 
-# this one is use for testing opensearch cloud formation.
 HOST = 'search-photos1-sxipfgbn7hxqx3ibsnr3lvxany.us-east-1.es.amazonaws.com/'
 REGION = 'us-east-1'
 INDEX = 'photos'
