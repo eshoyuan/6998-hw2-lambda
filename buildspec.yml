@@ -15,7 +15,7 @@ phases:
       - zip -g deployment_package.zip lambda_function.py
 artifacts:
   files:
-    - deployment package1.zip
+    - deployment_package.zip
   # post_build:
   #   commands:
   #     - echo "Updating lambda Function..."
