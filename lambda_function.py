@@ -13,7 +13,6 @@ es_client = boto3.client('opensearch')
 
 # DEMO
 
-HOST = 'search-photos1-sxipfgbn7hxqx3ibsnr3lvxany.us-east-1.es.amazonaws.com/'
 REGION = 'us-east-1'
 INDEX = 'photos11111'
 
@@ -40,7 +39,7 @@ def lambda_handler(event, context):
 
         
         labels = [label['Name'] for label in rekognition_response['Labels']]
-        cusomLabels = response["Metadata"]["customlabels"]
+        cusomLabels = response["Metadata"]["x-amz-customlabels"]
         
         for label in labels:
             label = inflection.singularize(label)
