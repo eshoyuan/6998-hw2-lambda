@@ -39,7 +39,7 @@ def lambda_handler(event, context):
 
         
         labels = [label['Name'] for label in rekognition_response['Labels']]
-        cusomLabels = response["Metadata"]["x-amz-customlabels"]
+        customlabels = response["Metadata"]["x-amz-customlabels"]
         
         for label in labels:
             label = inflection.singularize(label)
