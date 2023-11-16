@@ -18,6 +18,7 @@ INDEX = 'photos11111'
 
 def lambda_handler(event, context):
     # TODO implement
+    print("123")
     print(event)
     try:
         # Use the head_object method to get S3 object metadata
