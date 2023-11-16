@@ -46,7 +46,7 @@ def lambda_handler(event, context):
         if customlabels != "":
             customlabels = customlabels.split(",")
             for l in customlabels:
-                labels.append(inflection.singularize(l))
+                labels.append(inflection.singularize(l.strip()))
         
         print(labels)
         print(response)
